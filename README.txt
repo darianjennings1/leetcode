@@ -1,1 +1,1 @@
-documenting my leetcode problems for overall progression
+documenting code for my leetcode problems
