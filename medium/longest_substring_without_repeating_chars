@@ -1,0 +1,24 @@
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        result = ""
+        ans = 0
+        for letter in s:
+
+            # the letter exists already
+            if letter in result:
+                # if length of result is > previous answer then we want to update it to the new longest substring
+                if len(result) > ans:
+                    ans = len(result)
+                
+                # remove where letter already exists and  continue
+                result = result[result.index(letter) + 1:] + letter
+
+            # letter does not exist in result string 
+            else:
+                result += letter
+        
+        if len(result) > ans:
+            ans = len(result)
+
+        return ans
+        
